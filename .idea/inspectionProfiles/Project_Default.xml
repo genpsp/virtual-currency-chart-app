@@ -180,6 +180,9 @@
     <inspection_tool class="TodoComment" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="TsLint" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="UnresolvedReference" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="UnterminatedStatementJS" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoreSemicolonAtEndOfBlock" value="true" />
+    </inspection_tool>
     <inspection_tool class="UnusedCatchParameterJS" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_ignoreCatchBlocksWithComments" value="false" />
     </inspection_tool>
