@@ -1,13 +1,17 @@
 import React, {Component} from 'react'
-import {Grid} from "react-bootstrap";
-import Header from "../common/Header";
+import {Row, Col} from "react-bootstrap";
+import ChartContainer from "../../containers/mainChart/ChartContainer";
 
 export default class MainChart extends Component {
     render() {
-        return(
-            <Grid fruid>
-                <Header />
-            </Grid>
+        return (
+            <div className='MainChart'>
+                <Row>
+                    <Col sm={12}>
+                        <ChartContainer/>
+                    </Col>
+                </Row>
+            </div>
         )
     }
 }

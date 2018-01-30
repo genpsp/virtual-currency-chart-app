@@ -1,17 +1,21 @@
 import React, {Component} from 'react'
-import {Col, Row} from "react-bootstrap";
+import {Button, Col, Row} from "react-bootstrap";
 
 export default class Header extends Component {
     render() {
         return (
-            <Row>
-                <Col sm={7}>
-                    <h1>Bitcoinチャート</h1>
-                </Col>
-                <Col sm={5}>
-                    <h2>見出し</h2>
-                </Col>
-            </Row>
+            <div className='Header' style={{border: 'solid 1px'}}>
+                <Row>
+                    <Col sm={7}>
+                        <h1>Bitcoinチャート.com</h1>
+                    </Col>
+                    <Col sm={5} style={{textAlign: 'right'}}>
+                        <Button>default</Button>
+                        <Button>default</Button>
+                        <Button>default</Button>
+                    </Col>
+                </Row>
+            </div>
         )
     }
 }
