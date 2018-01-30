@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4b823a5-d75d-4bf5-a6f0-ed2700f9eba5" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/common/SideMenu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/mainChart/Chart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/containers/mainChart/ChartContainer.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
@@ -357,12 +360,12 @@
       <workItem from="1516459680646" duration="994000" />
       <workItem from="1516522216426" duration="2998000" />
       <workItem from="1516620738934" duration="2337000" />
-      <workItem from="1517139343126" duration="8982000" />
+      <workItem from="1517139343126" duration="9005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21441000" />
+    <option name="totallyTimeSpent" value="21464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
