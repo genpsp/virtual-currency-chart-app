@@ -1,19 +1,35 @@
-
-const baseUrl = 'https://api.bitflyer.jp/v1/'
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+const baseBitflyerUrl = 'https://api.bitflyer.jp/v1/' //ビットフライヤー
+const baseCryptoCompareUrl = 'https://min-api.cryptocompare.com/'　//CryptoCompare
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/' //クロスドメイン制約回避のためのproxy
 
 export default class API {
-    loadData = () => {
-        console.log('api moving')
-        const url = baseUrl + 'getmarkets'
+    //マーケット情報を取得
+    loadMarket = () => {
+        const targetUrl = baseBitflyerUrl + 'getmarkets'
 
-        return fetch(proxyUrl+url, {
+        return fetch(proxyUrl + targetUrl, {
             method: 'GET',
             dataType: 'json',
         }).then((response) => {
             return response.json()
         }).then((json) => {
-            console.log(json)
+            console.log('market: ' + json)
+            return json
+        })
+    }
+
+
+    // チャートデータを取得
+    loadData = () => {
+        const targetUrl = baseCryptoCompareUrl + 'data/histohour?fsym=BTC&tsym=JPY&limit=100&e=bitFlyer'
+
+        return fetch(proxyUrl + targetUrl, {
+            method: 'GET',
+            dataType: 'json',
+        }).then((response) => {
+            return response.json()
+        }).then((json) => {
+            console.log('data: ' + json)
             return json
         })
     }

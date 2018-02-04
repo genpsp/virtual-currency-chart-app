@@ -1,16 +1,17 @@
 import Chart from '../../components/mainChart/Chart'
 import {connect} from "react-redux";
-import {loadData} from "../../actions/mainChart/chartAction";
+import {initializeChartData} from "../../actions/mainChart/chartAction";
 
 const mapStateToProps = (state) => {
     return{
-
+        market: state.chartReducer.market,
+        data: state.chartReducer.data,
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return{
-        loadData: () => {
-            dispatch(loadData())
+        initializeChartData: () => {
+            dispatch(initializeChartData())
         }
     }
 }
