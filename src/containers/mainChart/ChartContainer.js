@@ -1,5 +1,6 @@
 import Chart from '../../components/mainChart/Chart'
 import {connect} from "react-redux";
+import {loadData} from "../../actions/mainChart/chartAction";
 
 const mapStateToProps = (state) => {
     return{
@@ -8,7 +9,9 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return{
-
+        loadData: () => {
+            dispatch(loadData())
+        }
     }
 }
 

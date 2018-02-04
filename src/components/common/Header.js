@@ -6,7 +6,7 @@ export default class Header extends Component {
         return (
             <div className='Header' style={{border: 'solid 1px'}}>
                 <Row>
-                    <Col sm={7}>
+                    <Col sm={7} style={{verticalAlign: 'middle'}}>
                         <h1>Bitcoinチャート.com</h1>
                     </Col>
                     <Col sm={5} style={{textAlign: 'right'}}>

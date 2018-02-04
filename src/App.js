@@ -1,6 +1,6 @@
 "use strict";
 import React, {Component} from 'react';
-import {Grid, Col} from "react-bootstrap";
+import {Grid, Row, Col} from "react-bootstrap";
 import './css/App.css';
 import MainChartContainer from "./containers/mainChart/MainChartContainer";
 import Header from "./components/common/Header";
@@ -13,12 +13,14 @@ export default class App extends Component {
             <div className="App">
                 <Grid fluid={true}>
                     <Header/>
-                    <Col sm={10} style={{border: 'solid 1px'}}>
-                        <MainChartContainer/>
-                    </Col>
-                    <Col sm={2} style={{border: 'solid 1px'}}>
-                        <SideMenu/>
-                    </Col>
+                    <Row>
+                        <Col sm={9} style={{border: 'solid 1px'}}>
+                            <MainChartContainer/>
+                        </Col>
+                        <Col sm={3} style={{border: 'solid 1px'}}>
+                            <SideMenu/>
+                        </Col>
+                    </Row>
                     <Footer/>
                 </Grid>
             </div>

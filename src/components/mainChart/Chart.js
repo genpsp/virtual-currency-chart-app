@@ -1,7 +1,11 @@
 import React, {Component} from 'react'
 import {Line, LineChart, ResponsiveContainer, XAxis, YAxis} from "recharts";
+import {loadData} from "../../actions/mainChart/chartAction";
 
 export default class Chart extends Component {
+    componentDidMount(){
+        this.props.loadData()
+    }
     data = [
         {name: 'Page A', uv: 4000},
         {name: 'Page B', uv: 3000},
