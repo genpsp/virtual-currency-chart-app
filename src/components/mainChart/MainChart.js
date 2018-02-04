@@ -6,7 +6,7 @@ export default class MainChart extends Component {
     render() {
         return (
             <div className='MainChart'>
-                <Row>
+                <Row style={{margin: '0 auto'}}>
                     <Col sm={12}>
                         <ChartContainer/>
                     </Col>

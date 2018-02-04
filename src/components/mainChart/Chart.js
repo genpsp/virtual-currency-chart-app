@@ -11,8 +11,9 @@ export default class Chart extends Component {
         let {data} = this.props
         let chartStyle = {
             border: '1px',
-            width: '700px',
+            width: '100%',
             height: '400px',
+            fontSize: '70%',
         }
 
         return(

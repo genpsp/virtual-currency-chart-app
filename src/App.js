@@ -10,14 +10,14 @@ import SideMenu from "./components/common/SideMenu";
 export default class App extends Component {
     render() {
         return (
-            <div className="App">
-                <Grid fluid={true}>
+            <div className="App" >
+                <Grid fluid={true} >
                     <Header/>
                     <Row>
-                        <Col sm={9} style={{border: 'solid 1px'}}>
+                        <Col sm={9} style={{border: 'solid 1px #c6d5dc'}}>
                             <MainChartContainer/>
                         </Col>
-                        <Col sm={3} style={{border: 'solid 1px'}}>
+                        <Col sm={3} style={{border: 'solid 1px #c6d5dc'}}>
                             <SideMenu/>
                         </Col>
                     </Row>

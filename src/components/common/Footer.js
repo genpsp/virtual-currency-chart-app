@@ -5,8 +5,8 @@ export default class Footer extends Component {
     render() {
         return (
             <div className='Footer'>
-                <Row>
-                    <Col sm={12} style={{border: 'solid 1px'}}>
+                <Row className='FooterRow'>
+                    <Col sm={12}>
                         footer
                     </Col>
                 </Row>
