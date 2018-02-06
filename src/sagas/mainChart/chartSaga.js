@@ -6,6 +6,11 @@ import {take, call, put} from 'redux-saga/effects'
 import API from '../../utils/api'
 
 const api = new API()
+const chartSaga = [
+    fetchData(),
+    fetchMarket(),
+    fetchInitialData(),
+]
 
 //チャートデータの初期化
 function* fetchInitialData() {
@@ -47,11 +52,5 @@ function* fetchData() {
         }
     }
 }
-
-const chartSaga = [
-    fetchData(),
-    fetchMarket(),
-    fetchInitialData(),
-]
 
 export default chartSaga

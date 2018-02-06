@@ -1,17 +1,29 @@
 import React, {Component} from 'react'
 import {Row, Col} from "react-bootstrap";
-import ChartContainer from "../../containers/mainChart/ChartContainer";
+import {connect} from "react-redux";
+import ChartComponent from "../../components/mainChart/Chart";
 
-export default class MainChart extends Component {
+class MainChart extends Component {
     render() {
         return (
             <div className='MainChart'>
                 <Row style={{margin: '0 auto'}}>
                     <Col sm={12}>
-                        <ChartContainer/>
+                        <ChartComponent/>
                     </Col>
                 </Row>
             </div>
         )
     }
 }
+
+//connect
+const mapStateToProps = (state) => {
+    return{
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return{
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MainChart)
