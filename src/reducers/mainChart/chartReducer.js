@@ -2,7 +2,7 @@ import {SET_DATA, SET_MARKET} from "../../actions/mainChart/chartAction";
 
 const initialState = {
     market: [],
-    data: [],
+    data: {},
     chartData: [],
 }
 

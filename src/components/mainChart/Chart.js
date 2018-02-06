@@ -25,9 +25,9 @@ class Chart extends Component {
             <div className='Chart' style={chartStyle}>
                 <ResponsiveContainer>
                     <LineChart data={data.Data}>
-                        <XAxis dataKey="time"/>
+                        <XAxis dataKey="time" interval={10}/>
                         <YAxis/>
-                        <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                        <CartesianGrid stroke="#eee" strokeDasharray="1 1"/>
                         <Line type="monotone" dataKey="close" stroke="#8884d8"/>
                     </LineChart>
                 </ResponsiveContainer>
