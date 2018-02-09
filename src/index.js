@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 import './css/index.css';
 import App from './App';
-import registerServiceWorker from './serviceWorker/registerServiceWorker';
+import registerServiceWorker from './utils/serviceWorker/registerServiceWorker';
 import configureStore from "./store/store";
 
 const initialState = {}
