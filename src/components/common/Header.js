@@ -1,8 +1,13 @@
 import React, {Component} from 'react'
 import {Button, Col, Row} from "react-bootstrap";
 import Pubnub from "../../utils/pubnub";
+import {
+    pubnubUnsubscribe
+} from "../../actions/pubnub/pubnubAction";
+import {connect} from "react-redux";
+import {pubnubConst} from "../../constants/const";
 
-export default class Header extends Component {
+class Header extends Component {
     render() {
         const pubnub = new Pubnub()
 
@@ -14,10 +19,11 @@ export default class Header extends Component {
                     </Col>
                     <Col sm={5} style={{textAlign: 'right'}}>
                         <Button
-                            onClick={pubnub.unsubscribe}
-                        >
-                            stopAPI
-                        </Button>
+                            text={'stopAPI'}
+                            onClick={() => {
+                                this.props.pubnubUnsubscribe(pubnubConst.PUBNUB_SUBKEY_BTC_JPY)
+                            }}
+                        />
                         <Button>default</Button>
                         <Button>default</Button>
                     </Col>
@@ -26,3 +32,16 @@ export default class Header extends Component {
         )
     }
 }
+
+//connect
+const mapStateToProps = (state) => {
+    return {}
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        pubnubUnsubscribe: (key) => {
+            dispatch(pubnubUnsubscribe(key))
+        },
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

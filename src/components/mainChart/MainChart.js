@@ -2,16 +2,15 @@ import React, {Component} from 'react'
 import {Row, Col} from "react-bootstrap";
 import {connect} from "react-redux";
 import ChartComponent from "../../components/mainChart/Chart";
-import {subscribePubNub} from "../../utils/pubnub";
-import Pubnub from "../../utils/pubnub";
+import {addPubnubListener, initializePubnub, pubnubSubscribe} from "../../actions/pubnub/pubnubAction";
+import {pubnubConst} from "../../constants/const";
 
 class MainChart extends Component {
     constructor(props){
         super(props)
-        const pubnub = new Pubnub()
-        pubnub.addListener()
-        pubnub.subscribe()
-        pubnub.unsubscribe()
+        this.props.initializePubnub()
+        this.props.addPubnubListener()
+        this.props.pubnubSubscribe(pubnubConst.PUBNUB_SUBKEY_BTC_JPY)
     }
     render() {
         return (
@@ -33,6 +32,15 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return{
+        initializePubnub: () => {
+            dispatch(initializePubnub())
+        },
+        addPubnubListener: () => {
+            dispatch(addPubnubListener())
+        },
+        pubnubSubscribe: (key) => {
+            dispatch(pubnubSubscribe(key))
+        },
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(MainChart)

@@ -44,7 +44,6 @@ const mapStateToProps = (state) => {
     return {
         market: state.chartReducer.market,
         data: state.chartReducer.data,
-        chartData: state.chartReducer.chartData,
     }
 }
 const mapDispatchToProps = (dispatch) => {
