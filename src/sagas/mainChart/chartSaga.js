@@ -58,6 +58,7 @@ function* fetchData() {
 
 export default chartSaga
 
+//取得データを編集して返す
 const _formatChartData = (data) => {
     let result
     let formedData

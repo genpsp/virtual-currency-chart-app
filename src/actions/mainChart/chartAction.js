@@ -3,6 +3,7 @@ export const SET_DATA = 'SET_DATA'
 export const INITIALIZE_CHART_DATA = 'INITIALIZE_CHART_DATA'
 export const LOAD_MARKET = 'LOAD_MARKET'
 export const SET_MARKET = 'SET_MARKET'
+export const ADD_DATA = 'ADD_DATA'
 
 export const initializeChartData = () => {
     return {
@@ -29,5 +30,11 @@ export const setData = (data) => {
     return {
         type: SET_DATA,
         payload: data,
+    }
+}
+export const addData = (plot) => {
+    return {
+        type: ADD_DATA,
+        payload: plot,
     }
 }

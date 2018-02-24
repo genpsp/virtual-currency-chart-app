@@ -8,9 +8,9 @@ import {pubnubConst} from "../../constants/const";
 class MainChart extends Component {
     constructor(props){
         super(props)
+        //RealtimeAPIからの受信開始
         this.props.initializePubnub()
         this.props.addPubnubListener()
-        this.props.pubnubSubscribe(pubnubConst.PUBNUB_SUBKEY_BTC_JPY)
     }
     render() {
         return (

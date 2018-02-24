@@ -8,6 +8,8 @@ import {
 import {take, call, put} from 'redux-saga/effects'
 import PubNub from 'pubnub'
 import {select} from "redux-saga/effects";
+import {addData} from "../../actions/mainChart/chartAction";
+import {eventChannel, channel} from "redux-saga";
 
 const bitflyerSubKey = 'sub-c-52a9ab50-291b-11e5-baaa-0619f8945a4f'
 const pubnubSaga = [
@@ -15,6 +17,7 @@ const pubnubSaga = [
     addPubnubListener(),
     pubnubSubscribe(),
     pubnubUnsubscribe(),
+    loopListner(),
 ]
 //selector
 const getStatePubnub = (state) => state.pubnubReducer.pubnub
@@ -44,12 +47,25 @@ function* addPubnubListener() {
             pubnubState = yield select(getStatePubnub)
             pubnubState.addListener({
                 message: (message) => {
+                    console.log('recieved')
+                    addDataChannel.put(addData(message))
                     console.log(message)
                 }
             })
+            // const channel = yield call(_listener, pubnubState);
+            // const plot = yield take(channel)
+            // yield put(addData(plot))
         } catch (e) {
             console.log(e)
         }
+    }
+}
+
+const addDataChannel = channel()
+function* loopListner() {
+    while(true){
+        const action = yield take(addDataChannel)
+        yield put(action)
     }
 }
 
@@ -88,3 +104,15 @@ function* pubnubUnsubscribe() {
 }
 
 export default pubnubSaga
+
+const _listener = (pubnubState)  => {
+    return eventChannel(emit => {
+        pubnubState.addListener({
+            message: (message) => {
+                emit(addData(message))
+                console.log(message)
+            }
+        })
+        return () => {}
+    })
+}

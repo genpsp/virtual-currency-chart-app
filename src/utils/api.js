@@ -13,7 +13,8 @@ export default class API {
         }).then((response) => {
             return response.json()
         }).then((json) => {
-            console.log('market: ' + json)
+            console.log('recieved market: ')
+            console.log(json)
             return json
         })
     }
@@ -29,7 +30,8 @@ export default class API {
         }).then((response) => {
             return response.json()
         }).then((json) => {
-            console.log('data: ' + json)
+            console.log('recieved data: ')
+            console.log(json)
             return json
         })
     }
